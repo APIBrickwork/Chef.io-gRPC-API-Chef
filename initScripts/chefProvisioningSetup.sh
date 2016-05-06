@@ -9,7 +9,7 @@ credentialsDir=".aws"
 credentialFilename="credentials"
 configFilename="config"
 ChefConfigDir="git/LabCourse-group4-SS2016-CHEFrepo/.chef/"
-chefCookbookPath="git/LabCourse-group4-SS2016-CHEFrepo/"
+chefCookbookPath="git/LabCourse-group4-SS2016-CHEFrepo/cookbooks"
 knifeConfigFilename="knife.rb"
 
 echo '### Creating .aws folder in the home directory ###'
