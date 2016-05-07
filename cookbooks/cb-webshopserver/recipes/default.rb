@@ -6,3 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+include_recipe 'cb-webshopserver::webshopserver'
+include_recipe 'java::default'

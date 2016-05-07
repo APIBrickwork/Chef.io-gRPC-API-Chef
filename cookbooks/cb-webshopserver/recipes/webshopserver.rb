@@ -27,9 +27,5 @@ with_driver 'aws::eu-central-1' do
    		action :allocate
 	end
 
-	include_recipe 'java'
-	#package 'java' do
-	#	action :install
-	#end
-
+	
 end

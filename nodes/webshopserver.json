@@ -7,10 +7,10 @@
     "chef_provisioning": {
       "reference": {
         "driver_version": "1.8.0",
-        "allocated_at": "2016-05-06 16:01:35 UTC",
+        "allocated_at": "2016-05-06 18:30:19 UTC",
         "host_node": "chefzero://localhost:8889/nodes/",
-        "image_id": "ami-c59189a9",
-        "instance_id": "i-058ab070a2c4c9427",
+        "image_id": "ami-87564feb",
+        "instance_id": "i-0a617fc877bb4a0d1",
         "key_name": "chef_default"
       },
       "driver_url": "aws::eu-central-1"
