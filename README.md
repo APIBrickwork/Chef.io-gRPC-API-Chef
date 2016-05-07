@@ -49,9 +49,11 @@ Use the script [chefProvisioningSetup.sh Script](/chef-repo/initScripts/chefProv
 
 Define a ruby script client.rb and run it using
 
-`chef-client -z client.rb`
+`chef-client -z -o 'recipe[cookbook::recipe]'`
 
-where -z = --local-mode
+where 
+-z = --local-mode | -o = run-list items
+
 
 # Amazon WebServices with Chef (DOES NOT WORK WITH LOCAL-MODE) DEPRECATED
 
