@@ -16,7 +16,7 @@ with_driver 'aws::eu-central-1' do
 		bootstrap_options: {
     	# http://docs.aws.amazon.com/sdkforruby/api/Aws/EC2/Resource.html#create_instances-instance_method
     	# lists the available options.  The below options are the default
-    	image_id: "ami-87564feb", # default for us-west-1
+    	image_id: "ami-87564feb",
     	instance_type: "t2.micro",
     	security_group_ids: ["sg-79ae5d11"]
   		}
@@ -27,5 +27,5 @@ with_driver 'aws::eu-central-1' do
    		action :allocate
 	end
 
-	
+
 end
