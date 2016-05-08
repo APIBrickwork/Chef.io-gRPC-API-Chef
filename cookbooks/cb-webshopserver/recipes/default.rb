@@ -8,7 +8,7 @@
 #
 
 # Only necessary if you want to provision to AWS (comment out if using Kitchen!!)
-include_recipe 'cb-webshopserver::webshopserver'
+#include_recipe 'cb-webshopserver::webshopserver'
 
 # Set java attributes 
 node.default['java']['install_flavor'] = 'oracle'
@@ -20,10 +20,10 @@ include_recipe 'java::default'
 
 # Download webshopserver from Github
 execute 'downloadWSS' do
-	command 'wget https://github.com/tfreundo/LabCourse-group4-SS2016/releases/download/webshop_v1.0/webshopserver-v1.0.jar'
+	command 'cd ~ && wget https://github.com/tfreundo/LabCourse-group4-SS2016/releases/download/webshop_v1.1/webshopserver-1.1-jar-with-dependencies.jar'
 end
 
 # Execute webshopserver
 execute 'startWSS' do
-	command 'java -jar webshopserver-v1.0.jar'
+	command 'cd ~ && java -jar webshopserver-1.1-jar-with-dependencies.jar -p 8080 &'
 end
