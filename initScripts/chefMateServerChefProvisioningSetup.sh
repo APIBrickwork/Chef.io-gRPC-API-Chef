@@ -15,8 +15,9 @@ echo "### Starting Setup for Chef Provisioning with AWS ###"
 credentialsDir=".aws"
 credentialFilename="credentials"
 configFilename="config"
-ChefConfigDir="chefmateserver/git/LabCourse-group4-SS2016-CHEFrepo/.chef/"
-chefCookbookPath="chefmateserver/git/LabCourse-group4-SS2016-CHEFrepo/"
+ChefConfigDir="chefmateserver/LabCourse-group4-SS2016-CHEFrepo/.chef/"
+chefCookbookPath="chefmateserver/LabCourse-group4-SS2016-CHEFrepo/cookbooks"
+chefRepoPath="chefmateserver/LabCourse-group4-SS2016-CHEFrepo"
 knifeConfigFilename="knife.rb"
 
 echo '### Creating .aws folder in the home directory ###'
@@ -29,21 +30,19 @@ touch $credentialFilename
 
 echo "### Creating AWS credential file ###"
 
-echo "--> Please insert your AWS Secret Access Key: "
-awsSecretKey = $1
 # Write default credentials to file
 echo '[default]' > $credentialFilename
 echo 'aws_access_key_id = AKIAIJRM4MK36G27VPCQ' >> $credentialFilename
-echo "aws_secret_access_key = $awsSecretKey" >> $credentialFilename
+echo "aws_secret_access_key = $1" >> $credentialFilename
 
 echo "### Creating AWS Config file ###"
 touch $configFilename
 echo 'export CHEF_DRIVER=aws # on Unix' > $configFilename
 
-echo "--> Please create the directory /etc/chef if not already existing."
 mkdir /etc/chef
-echo "--> Copy your private key for AWS into the folder /etc/chef and call it 'client.pem'. // TODO: Still relevant??"
-read
+# TODO: Should not be necessary (chefmateserver will create its own ssh keys)
+#echo "--> Copy your private key for AWS into the folder /etc/chef and call it 'client.pem'. // TODO: Still relevant??"
+#read
 
 echo "### Creating the knife.rb (Chef knife configuration file) ###"
 
@@ -55,3 +54,4 @@ echo "knife[:aws_credential_file] = \"$HOME/$credentialsDir/$credentialFilename\
 echo "knife[:ssh_key_name] = \"knife\"" >> $knifeConfigFilename
 echo "knife[:region] = \"eu-central-1\"" >> $knifeConfigFilename
 echo "cookbook_path \"$HOME/$chefCookbookPath\"" >> $knifeConfigFilename
+echo "chef_repo_path \"$HOME/$chefRepoPath\"" >> $knifeConfigFilename
