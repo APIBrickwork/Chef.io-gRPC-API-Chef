@@ -1,7 +1,7 @@
 #
-# Cookbook Name:: Chefmate
+# Cookbook Name:: cb-chefmate
 # Recipe:: aws_provision
-#
+# Author: Tobias Freundorfer
 #
 
 # Use AWS to provision to
