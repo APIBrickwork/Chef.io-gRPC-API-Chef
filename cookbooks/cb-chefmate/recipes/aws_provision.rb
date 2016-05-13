@@ -33,6 +33,7 @@ with_driver "aws::#{node['chefmate']['machine']['region']}" do
   
   machine "#{node['chefmate']['machine']['name']}" do
       tag "#{node['chefmate']['machine']['tag']}"
+      # TODO: Converge currently fails with NoMethodError
       action :allocate
   end
 
