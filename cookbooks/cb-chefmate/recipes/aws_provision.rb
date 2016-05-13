@@ -14,8 +14,8 @@ with_driver "aws::#{node['chefmate']['machine']['region']}" do
 
   # Create ssh key-pair
   aws_key_pair 'chefmateserver_key' do
-    private_key_path "#{home}/chefmateserver/.ssh/chefmateserver_key.pem"
-    public_key_path "#{home}/chefmateserver/.ssh/chefmateserver_key.pub"
+    private_key_path "#{home}/.ssh/chefmateserver_key.pem"
+    public_key_path "#{home}/.ssh/chefmateserver_key.pub"
     allow_overwrite false # True regenerates the key every run!
   end
 
@@ -27,7 +27,7 @@ with_driver "aws::#{node['chefmate']['machine']['region']}" do
       instance_type: "#{node['chefmate']['machine']['instancetype']}",
       security_group_ids: "#{node['chefmate']['machine']['defaultsecuritygroupdids']}",
       key_name: 'chefmateserver_key',
-      key_path: "#{home}/chefmateserver/.ssh"
+      key_path: "#{home}/.ssh"
       }
   })
   
@@ -36,15 +36,15 @@ with_driver "aws::#{node['chefmate']['machine']['region']}" do
       # TODO: Converge currently fails with NoMethodError
       action :converge
       # Global variable holding the address of the created machine
-      #ohai_hints 'ec2' => '{}'
-  	  #$publicIP = node['ec2']['public_ips']
+      ohai_hints 'ec2' => '{}'
+  	  $publicIP = node['ec2']['public_ips']
   end
 
 
 
 end
 
-#log 'message' do
-#  message "CHEFMATEINFO_Public-IP-Address=#$publicIP"
-#  level :info
-#end
+log 'message' do
+  message "CHEFMATEINFO_Public-IP-Address=#$publicIP"
+  level :info
+end

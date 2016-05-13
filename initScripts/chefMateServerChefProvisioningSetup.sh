@@ -55,7 +55,3 @@ echo "knife[:ssh_key_name] = \"knife\"" >> $knifeConfigFilename
 echo "knife[:region] = \"eu-central-1\"" >> $knifeConfigFilename
 echo "cookbook_path \"$HOME/$chefCookbookPath\"" >> $knifeConfigFilename
 echo "chef_repo_path \"$HOME/$chefRepoPath\"" >> $knifeConfigFilename
-
-echo "### Creating empty .ssh folder."
-cd ~/chefmateserver
-mkdir .ssh
