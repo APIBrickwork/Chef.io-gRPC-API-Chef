@@ -16,7 +16,7 @@ with_driver "aws::#{node['chefmate']['machine']['region']}" do
   aws_key_pair 'chefmateserver_key' do
     private_key_path "#{home}/chefmateserver/.ssh/chefmateserver_key.pem"
     public_key_path "#{home}/chefmateserver/.ssh/chefmateserver_key.pub"
-    allow_overwrite true # Regenerates the key every run!
+    allow_overwrite false # True regenerates the key every run!
   end
 
   with_machine_options({
