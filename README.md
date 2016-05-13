@@ -54,6 +54,11 @@ Define a ruby script client.rb and run it using
 where 
 -z = --local-mode | -o = run-list items
 
+> This will currently NOT bootstrap the chef-client due to documentation. May ONLY be used to instantiate and provision e.g. an EC2 instance to AWS. Afterwards (as a workaround) bootstrapping has to be called manually (or scripted) using the following command
+
+## Bootstrapping Chef-client (remotely)
+
+`knife zero bootstrap -z -i key.pem --sudo user@host`
 
 # Amazon WebServices with Chef (DOES NOT WORK WITH LOCAL-MODE) DEPRECATED
 
