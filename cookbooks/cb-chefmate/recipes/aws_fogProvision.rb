@@ -23,7 +23,7 @@ server = connection.servers.create(
 )
 
 # wait for it to get online
-server.wait_for { ready? }
+server.wait_for(1200){ ready? }
 
 $publicDns = server.dns_name
 puts "CHEFMATEINFO::PublicDNS=#$publicDns"
