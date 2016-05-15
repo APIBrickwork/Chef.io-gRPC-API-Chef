@@ -6,9 +6,9 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-mysql_service 'cloud' do
-  port '3306'
+mysql_service "#{node['chefmate']['machine']['mysql']['servicename']}" do
+  port "#{node['chefmate']['machine']['mysql']['port']}"
   version '5.5'
-  initial_root_password 'cloud2016'
+  initial_root_password "#{node['chefmate']['machine']['mysql']['rootpw']}"
   action [:create, :start]
 end
