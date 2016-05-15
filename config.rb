@@ -1,2 +1,3 @@
-file_cache_path "~/chef-solo"
-cookbook_path "~/git/LabCourse-group4-SS2016-CHEFrepo/cookbooks"
+home = File.expand_path('~') 
+file_cache_path "#{home}/chef-solo"
+cookbook_path "#{home}/git/LabCourse-group4-SS2016-CHEFrepo/cookbooks"
