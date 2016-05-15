@@ -33,18 +33,10 @@ with_driver "aws::#{node['chefmate']['machine']['region']}" do
   
   machine "#{node['chefmate']['machine']['name']}" do
       tag "#{node['chefmate']['machine']['tag']}"
-      # TODO: Converge currently fails with NoMethodError
+      # Be sure to fix the converge bug with long AWS ID's (see this Github Repo Issue #3)
       action :converge
-      # Global variable holding the address of the created machine
-      ohai_hints 'ec2' => '{}'
-  	  $publicIP = node['ec2']['public_ips']
   end
 
 
 
-end
-
-log 'message' do
-  message "CHEFMATEINFO_Public-IP-Address=#$publicIP"
-  level :info
 end
