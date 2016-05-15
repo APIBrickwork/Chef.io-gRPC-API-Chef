@@ -54,7 +54,6 @@ Define a ruby script client.rb and run it using
 where 
 -z = --local-mode | -o = run-list items
 
-
 # Amazon WebServices with Chef (DOES NOT WORK WITH LOCAL-MODE) DEPRECATED
 
 This section describes specific setups to use Chef with the Amazon WebServices (AWS)

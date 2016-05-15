@@ -9,7 +9,8 @@ credentialsDir=".aws"
 credentialFilename="credentials"
 configFilename="config"
 ChefConfigDir="git/LabCourse-group4-SS2016-CHEFrepo/.chef/"
-chefCookbookPath="git/LabCourse-group4-SS2016-CHEFrepo/"
+chefCookbookPath="git/LabCourse-group4-SS2016-CHEFrepo/cookbooks"
+chefRepoPath="git/LabCourse-group4-SS2016-CHEFrepo"
 knifeConfigFilename="knife.rb"
 
 echo '### Creating .aws folder in the home directory ###'
@@ -47,3 +48,4 @@ echo "knife[:aws_credential_file] = \"$HOME/$credentialsDir/$credentialFilename\
 echo "knife[:ssh_key_name] = \"knife\"" >> $knifeConfigFilename
 echo "knife[:region] = \"eu-central-1\"" >> $knifeConfigFilename
 echo "cookbook_path \"$HOME/$chefCookbookPath\"" >> $knifeConfigFilename
+echo "chef_repo_path \"$HOME/$chefRepoPath\"" >> $knifeConfigFilename
