@@ -45,6 +45,16 @@ Replace 'user' with your local OS username!
 
 Use the script [chefProvisioningSetup.sh Script](/chef-repo/initScripts/chefProvisioningSetup.sh) for the semi-automatic configuration.
 
+## Usage
+
+Define a ruby script client.rb and run it using
+
+`chef-client -z -o 'recipe[cookbook::recipe]'`
+
+where 
+-z = --local-mode | -o = run-list items
+
+
 # Amazon WebServices with Chef (DOES NOT WORK WITH LOCAL-MODE) DEPRECATED
 
 This section describes specific setups to use Chef with the Amazon WebServices (AWS)
