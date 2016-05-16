@@ -19,15 +19,3 @@ mysql_service "#{node['chefmate']['machine']['mysql']['servicename']}" do
   initial_root_password "#{node['chefmate']['machine']['mysql']['rootpw']}"
   action [:create, :start]
 end
-
-mysql_database_user 'wp' do
-  connection(
-    :host => '127.0.0.1',
-    :username => 'wp',
-    :password => "#{node['chefmate']['machine']['mysql']['rootpw']}"
-  )
-  password 'wppw'
-  database_name 'wordpressdb'
-  host '%'
-  action [:create, :grant]
-end
