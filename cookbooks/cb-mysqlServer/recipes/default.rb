@@ -7,11 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# Configure the MySQL client.
-mysql_client "#{node['chefmate']['machine']['mysql']['servicename']}" do
-  action :create
-end
-
 mysql_service "#{node['chefmate']['machine']['mysql']['servicename']}" do
   port "#{node['chefmate']['machine']['mysql']['port']}"
   version '5.5'
