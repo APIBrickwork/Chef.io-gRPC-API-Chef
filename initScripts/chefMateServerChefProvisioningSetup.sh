@@ -51,7 +51,6 @@ mkdir $ChefConfigDir
 cd $ChefConfigDir
 touch $knifeConfigFilename
 echo "knife[:aws_credential_file] = \"$HOME/$credentialsDir/$credentialFilename\"" > $knifeConfigFilename
-echo "knife[:ssh_key_name] = \"knife\"" >> $knifeConfigFilename
 echo "knife[:region] = \"eu-central-1\"" >> $knifeConfigFilename
 echo "cookbook_path \"$HOME/$chefCookbookPath\"" >> $knifeConfigFilename
 echo "chef_repo_path \"$HOME/$chefRepoPath\"" >> $knifeConfigFilename
