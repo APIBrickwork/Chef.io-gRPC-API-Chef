@@ -32,17 +32,14 @@ echo "### Creating AWS credential file ###"
 
 # Write default credentials to file
 echo '[default]' > $credentialFilename
-echo 'aws_access_key_id = AKIAIJRM4MK36G27VPCQ' >> $credentialFilename
-echo "aws_secret_access_key = $1" >> $credentialFilename
+echo "aws_access_key_id = $1" >> $credentialFilename
+echo "aws_secret_access_key = $2" >> $credentialFilename
 
 echo "### Creating AWS Config file ###"
 touch $configFilename
 echo 'export CHEF_DRIVER=aws # on Unix' > $configFilename
 
 mkdir /etc/chef
-# TODO: Should not be necessary (chefmateserver will create its own ssh keys)
-#echo "--> Copy your private key for AWS into the folder /etc/chef and call it 'client.pem'. // TODO: Still relevant??"
-#read
 
 echo "### Creating the knife.rb (Chef knife configuration file) ###"
 

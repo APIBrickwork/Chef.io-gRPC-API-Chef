@@ -6,10 +6,6 @@ connection = Fog::Compute.new(
   :aws_secret_access_key => "#{node['chefmate']['aws']['credentials']['secretkey']}"
 )
 
-# get the security group
-#sg = connection.security_groups.get_by_id('sg-79ae5d11')
-
-
 # start a server
 server = connection.servers.create(
 	:username => "#{node['chefmate']['machine']['username']}",
