@@ -15,9 +15,9 @@ echo "### Starting Setup for Chef Provisioning with AWS ###"
 credentialsDir=".aws"
 credentialFilename="credentials"
 configFilename="config"
-ChefConfigDir="chefmateserver/LabCourse-group4-SS2016-CHEFrepo/.chef/"
-chefCookbookPath="chefmateserver/LabCourse-group4-SS2016-CHEFrepo/cookbooks"
-chefRepoPath="chefmateserver/LabCourse-group4-SS2016-CHEFrepo"
+ChefConfigDir="chefmateserver/Chef.io-gRPC-API-Chef/.chef/"
+chefCookbookPath="chefmateserver/Chef.io-gRPC-API-Chef/cookbooks"
+chefRepoPath="chefmateserver/Chef.io-gRPC-API-Chef"
 knifeConfigFilename="knife.rb"
 
 echo '### Creating .aws folder in the home directory ###'
